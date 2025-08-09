@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuryaRaksha - Ayurvedic Sun Protection | Created by Girish Lade</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: '#FF9933',
+                        white: '#FFFFFF',
+                        green: '#138808',
+                        navy: '#000080',
+                        maroon: '#800000'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #fff9c4 0%, #e3f2fd 100%);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+        .nav-link:hover {
+            text-shadow: 0 0 8px rgba(255, 153, 51, 0.5);
+        }
+        .tricolor-bg {
+            background: linear-gradient(to right, #FF9933 33.33%, #FFFFFF 33.33%, 33.33%, #138808 66.66%);
+            height: 8px;
+        }
+        .ashoka-chakra {
+            width: 40px;
+            height: 40px;
+            background: #000080;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ashoka-chakra::before {
+            content: "-wheel";
+            font-family: sans-serif;
+            color: white;
+            font-size: 10px;
+        }
+        .ornamental-border {
+            border: 2px solid;
+            border-image: linear-gradient(45deg, #FF9933, #138808) 1;
+        }
+        .developer-credit {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="bg-amber-50">
+    <!-- Developer Credit -->
+    <div class="developer-credit">
+        Website Created by Girish Lade
+    </div>
+
+    <!-- Tricolor Bar -->
+    <div class="tricolor-bg"></div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="ashoka-chakra"></div>
+                <div>
+                    <span class="text-2xl font-bold text-gray-800 heading-font">SuryaRaksha</span>
+                    <p class="text-xs text-gray-600">आयुर्वेदिक सनस्क्रीन समाधान</p>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#products" class="text-gray-600 hover:text-saffron transition-colors nav-link font-medium">उत्पाद</a>
+                <a href="#features" class="text-gray-600 hover:text-saffron transition-colors nav-link font-medium">विशेषताएं</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-saffron transition-colors nav-link font-medium">समीक्षाएं</a>
+                <a href="#contact" class="text-gray-600 hover:text-saffron transition-colors nav-link font-medium">संपर्क</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t hidden">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-3">
+                <a href="#products" class="text-gray-600 hover:text-saffron transition-colors py-2 font-medium">उत्पाद</a>
+                <a href="#features" class="text-gray-600 hover:text-saffron transition-colors py-2 font-medium">विशेषताएं</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-saffron transition-colors py-2 font-medium">समीक्षाएं</a>
+                <a href="#contact" class="text-gray-600 hover:text-saffron transition-colors py-2 font-medium">संपर्क</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 hero-bg">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 heading-font">
+                    अपनी त्वचा की रक्षा करें,<br>सूर्य का आनंद लें
+                </h1>
+                <p class="text-xl text-gray-700 mb-8">
+                    आयुर्वेदिक सूत्रों पर आधारित अत्याधुनिक सनस्क्रीन जो बिना किसी समझौते के सुरक्षा प्रदान करती है।
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-saffron hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg cta-button">
+                        अभी खरीदें
+                    </button>
+                    <button class="border-2 border-saffron text-saffron hover:bg-amber-100 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-md cta-button">
+                        अधिक जानें
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="bg-white rounded-2xl shadow-2xl p-6 transform rotate-3 hover:rotate-0 transition-transform duration-500 ornamental-border">
+                        <img 
+                            src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=600&q=80" 
+                            alt="SuryaRaksha Sunscreen" 
+                            class="rounded-lg w-full object-cover"
+                        />
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-saffron text-white px-6 py-3 rounded-full font-bold shadow-lg animate-pulse">
+                        SPF 30+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 heading-font">क्यों चुनें SuryaRaksha?</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    आपकी त्वचा के स्वास्थ्य और पर्यावरण के प्रति हमारी प्रतिबद्धता
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 rounded-xl hover:shadow-xl transition-all duration-300 feature-card bg-gradient-to-br from-amber-50 to-white border border-amber-100">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-amber-100 text-saffron rounded-full mb-4 shadow-md">
+                        <i class="fas fa-sun text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">व्यापक सुरक्षा</h3>
+                    <p class="text-gray-600">UVA/UVB किरणों से बचाव के लिए सुरक्षा</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-xl hover:shadow-xl transition-all duration-300 feature-card bg-gradient-to-br from-green-50 to-white border border-green-100">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mb-4 shadow-md">
+                        <i class="fas fa-seedling text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">पर्यावरण-अनुकूल</h3>
+                    <p class="text-gray-600">प्राकृतिक सामग्री जो आपकी त्वचा और समुद्र की रक्षा करती है</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-xl hover:shadow-xl transition-all duration-300 feature-card bg-gradient-to-br from-blue-50 to-white border border-blue-100">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-4 shadow-md">
+                        <i class="fas fa-tint text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">हल्का अनुभव</h3>
+                    <p class="text-gray-600">आसान अवशोषण बिना छिद्रों को अवरुद्ध किए</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-xl hover:shadow-xl transition-all duration-300 feature-card bg-gradient-to-br from-purple-50 to-white border border-purple-100">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 text-purple-600 rounded-full mb-4 shadow-md">
+                        <i class="fas fa-user-md text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">चिकित्सकों द्वारा परीक्षण</h3>
+                    <p class="text-gray-600">सभी प्रकार की त्वचा के लिए सुरक्षित, संवेदनशील त्वचा के लिए भी</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 heading-font">हमारे उत्पाद</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    अपनी जीवनशैली के लिए सही सनस्क्रीन की खोज करें
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 product-card ornamental-border">
+                    <div class="overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" 
+                            alt="SuryaRaksha Daily SPF 30" 
+                            class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">SuryaRaksha दैनिक SPF 30</h3>
+                        <p class="text-gray-600 mb-4">आर्द्रता वाले लाभों के साथ हल्की दैनिक सुरक्षा</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-saffron">₹1,850</span>
+                            <button class="bg-saffron hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold flex items-center transition-colors shadow-md hover:shadow-lg">
+                                कार्ट में जोड़ें <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 product-card ornamental-border">
+                    <div class="overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" 
+                            alt="SuryaShield Sport SPF 50" 
+                            class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">SuryaShield खेल SPF 50</h3>
+                        <p class="text-gray-600 mb-4">सक्रिय जीवनशैली के लिए पानी प्रतिरोधी सूत्र</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-saffron">₹2,250</span>
+                            <button class="bg-saffron hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold flex items-center transition-colors shadow-md hover:shadow-lg">
+                                कार्ट में जोड़ें <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 product-card ornamental-border">
+                    <div class="overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" 
+                            alt="MineralGlow Tinted SPF 25" 
+                            class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
+                        />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">MineralGlow टिंटेड SPF 25</h3>
+                        <p class="text-gray-600 mb-4">प्राकृतिक खनिज सुरक्षा के साथ हल्का कवरेज</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-saffron">₹2,100</span>
+                            <button class="bg-saffron hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold flex items-center transition-colors shadow-md hover:shadow-lg">
+                                कार्ट में जोड़ें <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 heading-font">हमारे ग्राहक क्या कहते हैं</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    वास्तविक समीक्षाएं वास्तविक लोगों द्वारा जो SuryaRaksha को प्यार करते हैं
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-amber-50 to-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 testimonial-card border border-amber-100">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"यह सनस्क्रीन भारी नहीं लगती और वास्तव में मेरी त्वचा को चमक देती है! मैं इसका उपयोग हर दिन करता हूँ।"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Priya S." class="w-12 h-12 rounded-full mr-4">
+                        <p class="font-semibold text-gray-800">— प्रिया शर्मा</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 testimonial-card border border-blue-100">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"अंत में एक सनस्क्रीन मिल गई है जो मेरे व्यायाम के दौरान टिकी रहती है। सक्रिय जीवनशैली के लिए बिलकुल सही!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Rahul M." class="w-12 h-12 rounded-full mr-4">
+                        <p class="font-semibold text-gray-800">— राहुल मेहता</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 testimonial-card border border-green-100">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-amber-400"></i>
+                        <i class="fas fa-star text-gray-300"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"यह बात पसंद है कि यह समुद्र-सुरक्षित है और सफेद परत नहीं छोड़ता। संवेदनशील त्वचा के लिए भी बढ़िया।"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anjali K." class="w-12 h-12 rounded-full mr-4">
+                        <p class="font-semibold text-gray-800">— अंजलि कुमारी</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-saffron to-orange-500">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 heading-font">
+                अपनी त्वचा की रक्षा करने के लिए तैयार हैं?
+            </h2>
+            <p class="text-xl text-amber-100 mb-8 max-w-2xl mx-auto">
+                हजारों संतुष्ट ग्राहकों में शामिल हों जो अपनी दैनिक सूर्य सुरक्षा की आवश्यकताओं के लिए SuryaRaksha पर भरोसा करते हैं।
+            </p>
+            <button class="bg-white text-saffron hover:bg-amber-100 px-8 py-4 rounded-full font-bold text-lg shadow-xl transition-all duration-300 cta-button">
+                संग्रह खरीदें
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="ashoka-chakra"></div>
+                        <div>
+                            <span class="text-2xl font-bold heading-font">SuryaRaksha</span>
+                            <p class="text-xs text-gray-400">आयुर्वेदिक सनस्क्रीन समाधान</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        प्रत्येक जीवनशैली के लिए प्रीमियम सनस्क्रीन समाधान। ध्यान के साथ आपकी त्वचा की रक्षा।
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-saffron transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-saffron transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-saffron transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">उत्पाद</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">दैनिक SPF 30</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">खेल SPF 50</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">टिंटेड SPF 25</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">बच्चों के लिए सूत्र</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">कंपनी</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">हमारे बारे में</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">टिकाऊपन</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">करियर</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">संपर्क</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">संपर्क</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2"></i>
+                            <span>namaste@suryaraksha.in</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-2"></i>
+                            <span>1800-SUN-PROTECT</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>123 सनलाइट एवेन्यू<br>मुंबई, महाराष्ट्र 400001</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 SuryaRaksha. सर्वाधिकार सुरक्षित। | गोपनीयता नीति | सेवा की शर्तें</p>
+                <p class="mt-2 text-sm">Website Created by Girish Lade</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const menu = document.getElementById('mobile-menu');
+                if (!menu.classList.contains('hidden')) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
