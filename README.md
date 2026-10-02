@@ -45,7 +45,7 @@ Simply copy the HTML file to your web server or open it directly in a browser. N
 - Adjust colors by modifying the Tailwind configuration
 
 ## Credits
-**Website Created by Girish Lade**
+**Website Created by Girish Lade** — built by [Girish Lade](https://github.com/girishlade111), [ladestack.in](https://ladestack.in)
 
 ## License
 This website template is provided for demonstration purposes. Please ensure you have appropriate rights to use any images or content before deployment.
